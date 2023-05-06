@@ -49,6 +49,11 @@ app.use(express.static(__dirname + '/views/public'));
 
 
 var index = require('./routes/index');
+
+app.get('/', (req, res)=>{
+  res.sendFile(__dirname + '/index.html');
+})
+
 app.use('/', index);
 
 const PORT = process.env.PORT || 5000;
