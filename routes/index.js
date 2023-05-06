@@ -3,10 +3,12 @@ var router = express.Router();
 var User = require('../models/user');
 
 router.get('/login', function (req, res, next) {
-	return res.render('index.ejs');
+	return res.render('login.ejs');
 });
 
-
+router.get('/register', function (req, res, next) {
+	return res.render('index.ejs');
+});
 router.post('/', function(req, res, next) {
 	console.log(req.body);
 	var personInfo = req.body;
@@ -57,9 +59,6 @@ router.post('/', function(req, res, next) {
 	}
 });
 
-router.get('/login', function (req, res, next) {
-	return res.render('login.ejs');
-});
 
 router.post('/login', function (req, res, next) {
 	//console.log(req.body);
